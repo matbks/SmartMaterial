@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZRDWP_MBACKHAUS_SMART_MATERIAL_SRV" xml:lang="pt" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <EntityType Name="SmartMaterialForm" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Material"/>
+                </Key>
+                <Property Name="IndustrySector" Type="ZRDWP_MBACKHAUS_SMART_MATERIAL_SRV.IndustrySector" Nullable="false"/>
+                <Property Name="Material" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Material" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Denominação" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PurchasingGroup" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Grp.compradores" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MaterialType" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Tipo material" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <ComplexType Name="IndustrySector">
+                <Property Name="Language" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="Idioma" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Industry" Type="Edm.String" Nullable="false" MaxLength="5" sap:label="SetInd." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Username" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="Nome do usuário" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Devclass" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Pacote" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Function" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Código de um caractere" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </ComplexType>
+            <EntityContainer Name="ZRDWP_MBACKHAUS_SMART_MATERIAL_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="SmartMaterialFormSet" EntityType="ZRDWP_MBACKHAUS_SMART_MATERIAL_SRV.SmartMaterialForm" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+            </EntityContainer>
+            <atom:link rel="self" href="http://vm29.4hub.cloud:52900/sap/opu/odata/sap/ZRDWP_MBACKHAUS_SMART_MATERIAL_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://vm29.4hub.cloud:52900/sap/opu/odata/sap/ZRDWP_MBACKHAUS_SMART_MATERIAL_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
